@@ -4,8 +4,8 @@ public class sort {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<Integer>();
         list.add(8);
-        list.add(3);
-        list.add(3);
+        list.add(4);
+        list.add(6);
         list.add(9);
         list.add(7);
         list.add(2);
@@ -14,7 +14,9 @@ public class sort {
         list.add(5);
 
         sort(list);
+        System.out.println(list);
 
+        inverter(list);
         System.out.println(list);
     }
 
@@ -38,6 +40,16 @@ public class sort {
             i++;
         }
 
+        return list;
+    }
+
+    public static List inverter(List<Integer> list) {
+        for (int i = 0; i < list.size(); i++){
+            int deletedEl = list.get(0);
+            list.remove(0);
+            list.add(-1*(i+1), deletedEl);
+            System.out.println(list);
+        }
         return list;
     }
 }
